@@ -1,7 +1,4 @@
-# hello_world
-A template for a [typescript](https://www.typescriptlang.org)/[sass](https://sass-lang.com) web app, with polyfills and a CSS reset
-
-## Highlights
+# ants
 
 - Webpack 4, Typescript, TSLint/ESLint, Sass
 - Polyfills ([core-js](https://github.com/zloirock/core-js), [regenerator-runtime](https://github.com/facebook/regenerator/tree/master/packages/regenerator-runtime)) and a CSS reset ([normalize.css](https://necolas.github.io/normalize.css/))
@@ -11,11 +8,11 @@ A template for a [typescript](https://www.typescriptlang.org)/[sass](https://sas
 
 ## Get started!
 
-1. Click the green **Use this template** button at the top, choose a name and clone it.
-2. Run `npm install` (you can ignore warnings for `sass-loader` and `fsevents`)
-3. Replace the metadata in `package.json`
-4. Insert the current year and your name in `LICENSE` after "Copyright (c)"
-5. Search for comments starting with `TODO:`, here you probably have to do something
+1. ~~Click the green **Use this template** button at the top, choose a name and clone it.~~
+2. ~~Run `npm install` (you can ignore warnings for `sass-loader` and `fsevents`)~~
+3. ~~Replace the metadata in `package.json`~~
+4. ~~Insert the current year and your name in `LICENSE` after "Copyright (c)"~~
+5. ~~Search for comments starting with `TODO:`, here you probably have to do something~~
 6. Start the development server with `npm start`
 7. Start coding!
 

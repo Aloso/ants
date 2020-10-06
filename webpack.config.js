@@ -13,7 +13,7 @@ module.exports = (env, argv) => {
   const cssLoader = {
     loader: 'css-loader',
     options: {
-      modules: true,
+      modules: false,
       sourceMap: true,
       importLoaders: 1,
     }
@@ -82,6 +82,10 @@ module.exports = (env, argv) => {
           use: isProd
             ? [MiniCssExtractPlugin.loader, cssLoader]
             : ['style-loader', cssLoader],
+        },
+        {
+          test: /\.(png|svg|jpg|gif)$/,
+          use: 'file-loader',
         },
       ],
     },
