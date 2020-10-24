@@ -7,6 +7,8 @@ const CopyPlugin = require('copy-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
+const filesDirectory = path.join(__dirname, 'src', 'files', '/');
+
 module.exports = (env, argv) => {
   const isProd = argv.mode === 'production';
 
@@ -48,7 +50,6 @@ module.exports = (env, argv) => {
       new webpack.HotModuleReplacementPlugin(),
       new CopyPlugin({
         patterns: [
-          { from: './src/manifest.json', to: './manifest.json' },
           { from: './src/assets', to: './assets' },
         ]
       }),
@@ -85,7 +86,7 @@ module.exports = (env, argv) => {
             : ['style-loader', cssLoader],
         },
         {
-          test: /\.(png|svg|jpg|gif|webp|ttf|otf|woff)$/,
+          test: s => s.startsWith(filesDirectory),
           use: 'file-loader',
         },
       ],

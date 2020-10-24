@@ -15,7 +15,7 @@ $intro_padding: 4vw
   font-style: normal
   font-weight: 400
   font-display: swap
-  src: url('./assets/PatrickHand.ttf') format('woff')
+  src: url('./files/PatrickHand.ttf') format('woff')
   unicode-range: $unicode-range
 
 @font-face
@@ -23,7 +23,7 @@ $intro_padding: 4vw
   font-style: normal
   font-weight: 300 700
   font-display: swap
-  src: url('./assets/WorkSans.ttf') format('woff supports variations'), url('./assets/WorkSans.ttf') format('woff-variations')
+  src: url('./files/WorkSans.ttf') format('woff supports variations'), url('./files/WorkSans.ttf') format('woff-variations')
   unicode-range: $unicode-range
 
 @font-face
@@ -31,7 +31,7 @@ $intro_padding: 4vw
   font-style: italic
   font-weight: 300 700
   font-display: swap
-  src: url('./assets/WorkSans-Italic.ttf') format('woff supports variations'), url('./assets/WorkSans-Italic.ttf') format('woff-variations')
+  src: url('./files/WorkSans-Italic.ttf') format('woff supports variations'), url('./files/WorkSans-Italic.ttf') format('woff-variations')
   unicode-range: $unicode-range
 
 @mixin text-outline($width: 0, $col: black)
@@ -79,13 +79,13 @@ ul
     background: #ffff8f
 
     @supports (background-blend-mode: lighten)
-      background: url('./assets/forest_soil.jpg'), #ffffa5e7
+      background: url('./files/forest_soil.jpg'), #ffffa5e7
       background-size: 256px
       background-attachment: fixed
       background-blend-mode: lighten
 
       body.supports-webp &
-        background-image: url('./assets/forest_soil.webp')
+        background-image: url('./files/forest_soil.webp')
 
 a
   color: #0543ca
@@ -141,11 +141,11 @@ button.big
   font-family: $cursive
   color: white
   font-size: calc(3.6vw + 12px)
-  background: url('./assets/texture.png'), linear-gradient(green, green 0.2vh, #ca7a17 2vh, #281500)
+  background: url('./files/texture.png'), linear-gradient(green, green 0.2vh, #ca7a17 2vh, #281500)
   @include text-outline($width: 0.02em, $col: #281500)
 
   body.supports-webp &
-    background: url('./assets/texture.webp'), linear-gradient(green, green 0.2vh, #ca7a17 2vh, #281500)
+    background: url('./files/texture.webp'), linear-gradient(green, green 0.2vh, #ca7a17 2vh, #281500)
 
   h1
     margin: 0
@@ -193,12 +193,12 @@ button.big
   height: 100%
   padding: 6vw
   font-size: 20px
-  background: url('./assets/forest_soil.jpg')
+  background: url('./files/forest_soil.jpg')
   background-size: 256px
   overflow: auto
 
   body.supports-webp &
-    background-image: url('./assets/forest_soil.webp')
+    background-image: url('./files/forest_soil.webp')
 
   &::before
     content: ''
@@ -207,7 +207,7 @@ button.big
     bottom: 0
     width: 40vw
     height: calc(40vw * 363 / 228)
-    background: url('./assets/ant.svg')
+    background: url('./files/ant.svg')
     background-size: contain
     filter: drop-shadow(2px 2px 10px #44444477)
 
