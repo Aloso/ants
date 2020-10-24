@@ -84,6 +84,9 @@ ul
       background-attachment: fixed
       background-blend-mode: lighten
 
+      body.supports-webp &
+        background-image: url('./assets/forest_soil.webp')
+
 a
   color: #0543ca
 
@@ -193,6 +196,9 @@ button.big
   background: url('./assets/forest_soil.jpg')
   background-size: 256px
   overflow: auto
+
+  body.supports-webp &
+    background-image: url('./assets/forest_soil.webp')
 
   &::before
     content: ''
