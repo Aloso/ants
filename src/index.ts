@@ -9,7 +9,7 @@ import './index.sass'
 // import(/* webpackChunkName: "foo" */ './foo').then((foo) => ...)
 
 import { StartWidget } from './interface/start_widget'
-import { show_intro_widgets } from './interface/intros'
+import { show_intro_widgets } from './interface/intro'
 import { setup_global_state } from './logic/app_state'
 
 // enable hot reloading for this module:

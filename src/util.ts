@@ -6,8 +6,8 @@ export function wait(ms: number): Promise<undefined> {
     return new Promise((resolve) => setTimeout(resolve, ms))
 }
 
-export function resolvable_promise(): Promise<undefined> & { resolve(): void } {
-    let resolve_: (() => void) | null = null
+export function resolvable_promise<T = void>(): Promise<T> & { resolve(value: T): void } {
+    let resolve_: ((value: T) => void) | null = null
     const p: any = new Promise(resolve => resolve_ = resolve)
     p.resolve = resolve_
     return p
