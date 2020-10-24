@@ -34,7 +34,7 @@ module.exports = (env, argv) => {
     },
 
     entry: {
-      main: './src/index.ts',
+      main: './src/index.tsx',
     },
 
     output: {

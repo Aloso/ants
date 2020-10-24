@@ -1,7 +1,7 @@
 {
   "compileOnSave": true,
   "files": [
-    "src/index.ts"
+    "src/index.tsx"
   ],
   "compilerOptions": {
     "baseUrl": "./src/",
@@ -21,6 +21,10 @@
       "es2018",
       "dom"
     ],
+    "jsx": "react",
+    "jsxFactory": "h",
+    "jsxFragmentFactory": "Fragment",
+    "skipLibCheck": true,
     "esModuleInterop": true
   }
 }
