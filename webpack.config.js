@@ -85,7 +85,7 @@ module.exports = (env, argv) => {
             : ['style-loader', cssLoader],
         },
         {
-          test: /\.(png|svg|jpg|gif|ttf|otf|woff)$/,
+          test: /\.(png|svg|jpg|gif|webp|ttf|otf|woff)$/,
           use: 'file-loader',
         },
       ],

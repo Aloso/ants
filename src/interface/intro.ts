@@ -11,7 +11,7 @@ function widget_1(_: AppState): Widget {
     return new IntroWidget('Hallo', nodes(
         p(`Ich bin `, b(`Formi`), `, dein ständiger Begleiter in diesem Spiel. Ich werde dir bei Problemen zur Seite stehen und dich immer wieder anfeuern 😉`),
         p(`Schön, dass du da bist! Wie du wahrscheinlich bereits festgestellt hast, ist dieses Spiel eine Web-App und keine native App für Android. Der Grund ist einfach, dass mein Schöpfer zu faul war, das Spiel im Play Store zu veröffentlichen 🙄`),
-        p(`Damit die Bedienung trotzdem problemlos funktioniert, hier ein paar Tipps:`),
+        p(`Damit die Bedienung trotzdem problemlos funktio­niert, hier ein paar Tipps:`),
         ul({ clss: 'highlight' },
             `Öffne die Website am besten in Chrome oder Ecosia für Android 🌲`,
             `Danach kannst du dieses Spiel zum Startbildschirm hinzufügen. Es verhält sich dann wie deine anderen Apps, nur dass du zum Öffnen der App eine Internetverbindung brauchst 🔌`,

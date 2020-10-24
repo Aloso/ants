@@ -141,6 +141,9 @@ button.big
   background: url('./assets/texture.png'), linear-gradient(green, green 0.2vh, #ca7a17 2vh, #281500)
   @include text-outline($width: 0.02em, $col: #281500)
 
+  body.supports-webp &
+    background: url('./assets/texture.webp'), linear-gradient(green, green 0.2vh, #ca7a17 2vh, #281500)
+
   h1
     margin: 0
     padding-top: calc(50vh - 1.7em)

@@ -10,6 +10,7 @@ import './index.sass'
 
 import { StartWidget } from './interface/start_widget'
 import { show_intro_widgets } from './interface/intro'
+import { setup_interface } from './interface/setup'
 import { setup_global_state } from './logic/app_state'
 
 // enable hot reloading for this module:
@@ -23,6 +24,7 @@ if (window.innerHeight < window.innerWidth) {
 }
 
 async function main() {
+    await setup_interface()
     const app_state = await setup_global_state()
     await new StartWidget(app_state).show()
     await show_intro_widgets(app_state)
