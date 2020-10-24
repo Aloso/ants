@@ -72,11 +72,17 @@ ul
     margin: 0.35em 0
 
   &.highlight
-    padding: 3vw $intro_padding 3vw ($intro_padding + 3vw)
+    padding: 3vw $intro_padding 3vw ($intro_padding + 4vw)
     margin: 1em (-$intro_padding)
     border: 1px solid #d1d115
     border-width: 1px 0
     background: #ffff8f
+
+    @supports (background-blend-mode: lighten)
+      background: url('./assets/forest_soil.jpg'), #ffffa5e7
+      background-size: 256px
+      background-attachment: fixed
+      background-blend-mode: lighten
 
 a
   color: #0543ca
