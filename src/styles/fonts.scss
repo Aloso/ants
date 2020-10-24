@@ -28,9 +28,3 @@ $unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U
        url('./files/WorkSans-Italic.ttf') format('woff-variations');
   unicode-range: $unicode-range;
 }
-
-@mixin text-outline($width: 0, $col: black) {
-  $wd: 0.84 * $width;
-  text-shadow: $width 0 0 $col, -$width 0 0 $col, 0 $width 0 $col, 0 (-$width) 0 $col,
-               $wd $wd 0 $col, -$wd $wd 0 $col, $wd (-$wd) 0 $col, -$wd (-$wd) 0 $col;
-}

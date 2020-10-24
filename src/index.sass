@@ -1,13 +1,8 @@
-// The global stylesheet
-// You can dynamically import stylesheets in different typescript modules to load them when needed.
-
-// This module resets vendor-specific defaults and makes CSS behavior more consistent:
 @import "~normalize.css/normalize.css"
-@import util
 
-$sans-serif: 'Work Sans', 'Segoe UI', 'Noto Sans', -apple-system, sans-serif
-$cursive: 'Patrick Hand', sans-serif
-$intro_padding: 4vw
+@import ./styles/util
+@import ./styles/fonts
+@import ./styles/basic
 
 // TODO: Your styles go here! You can remove most of these rules:
 html, body
@@ -42,22 +37,6 @@ ul
   li
     margin: 0.35em 0
 
-  &.highlight
-    padding: 3vw $intro_padding 3vw ($intro_padding + 4vw)
-    margin: 1em (-$intro_padding)
-    border: 1px solid #d1d115
-    border-width: 1px 0
-    background: #ffff8f
-
-    @supports (background-blend-mode: lighten)
-      background: url('./files/forest_soil.jpg'), #ffffa5e7
-      background-size: 256px
-      background-attachment: fixed
-      background-blend-mode: lighten
-
-      body.supports-webp &
-        background-image: url('./files/forest_soil.webp')
-
 a
   color: #0543ca
 
@@ -67,26 +46,6 @@ input
   font-family: inherit
   border: 1px solid #2e1509
   border-radius: 0.25em
-
-.centered
-  text-align: center
-.align-right
-  text-align: right
-.margin-top
-  margin-top: 1em
-.no-margin-top
-  margin-top: 0
-.uppercase
-  text-transform: uppercase
-
-.border-box
-  box-sizing: border-box
-.w100
-  width: 100%
-.cursive
-  font-family: $cursive
-.big
-  font-size: 1.2em
 
 button.big
   font-family: $cursive
@@ -106,122 +65,6 @@ button.big
     border-color: #02aa02
     background-color: #c7ffc7
 
-.start-widget
-  width: 100%
-  height: 100%
-  font-family: $cursive
-  color: white
-  font-size: calc(3.6vw + 12px)
-  background: url('./files/texture.png'), linear-gradient(green, green 0.2vh, #ca7a17 2vh, #281500)
-  @include text-outline($width: 0.02em, $col: #281500)
-
-  body.supports-webp &
-    background: url('./files/texture.webp'), linear-gradient(green, green 0.2vh, #ca7a17 2vh, #281500)
-
-  h1
-    margin: 0
-    padding-top: calc(50vh - 1.7em)
-    font-size: calc(10vw + 30px)
-    font-weight: 400
-    @include text-outline($width: 0.015em, $col: #281500)
-
-  .start-canvas
-    position: fixed
-    width: 100%
-    height: 100%
-    opacity: 0.4
-
-  .centered
-    position: relative
-    user-select: none
-
-  button.start-btn
-    opacity: 0
-    background-color: #ffffffcc
-    color: black
-    border: 0.04em solid #281500
-    font-family: inherit
-    letter-spacing: 0.03em
-    border-radius: 0.2em
-    font-size: 1.5em
-    padding: 0.3em 0.6em
-    margin: 1em 0 0 0
-    transition: opacity 0.4s
-
-  button.reset-btn
-    font-size: 1em
-    padding: 0.3em 0.6em
-    background: transparent
-    color: #95ddff
-    font-weight: normal
-    border: none
-    transition: opacity 0.4s
-    @include text-outline($width: 0.02em, $col: #281500)
-
-.intro-widget
-  box-sizing: border-box
-  width: 100%
-  height: 100%
-  padding: 6vw
-  font-size: 20px
-  background: url('./files/forest_soil.jpg')
-  background-size: 256px
-  overflow: auto
-
-  body.supports-webp &
-    background-image: url('./files/forest_soil.webp')
-
-  &::before
-    content: ''
-    position: fixed
-    left: 2vw
-    bottom: 0
-    width: 40vw
-    height: calc(40vw * 363 / 228)
-    background: url('./files/ant.svg')
-    background-size: contain
-    filter: drop-shadow(2px 2px 10px #44444477)
-
-  .intro-widget-inner
-    box-sizing: border-box
-    background: #ffffffdd
-    border: 2px solid #2e1509
-    border-radius: 3vw
-    padding: $intro_padding
-    margin-bottom: calc(40vw * 363 / 228 - 3.6em)
-
-  h1
-    font-family: $cursive
-    font-weight: 400
-    margin-top: 0
-
-.confirm-widget
-  position: fixed
-  box-sizing: border-box
-  background-color: #00000033
-  left: 0
-  top: 0
-  width: 100%
-  height: 100%
-  padding: 8vw
-  font-size: 20px
-
-  .confirm-widget-inner
-    box-sizing: border-box
-    background: white
-    border: 2px solid #2e1509
-    border-radius: 3vw
-    padding: 4vw
-    max-height: 80vh
-    overflow: auto
-
-    h1
-      font-family: $cursive
-      font-size: 1.7em
-      font-weight: normal
-      margin-top: 0
-
-    button
-      font-size: 1.1em
-      padding-left: 0.7em
-      padding-right: 0.7em
+@import ./styles/start_widget
+@import ./styles/intro_widget
+@import ./styles/confirm_widget

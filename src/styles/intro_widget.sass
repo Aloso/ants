@@ -1,0 +1,56 @@
+@import ./util
+
+$intro_padding: 4vw
+
+.intro-widget
+  box-sizing: border-box
+  width: 100%
+  height: 100%
+  padding: 6vw
+  font-size: 20px
+  background: url('./files/forest_soil.jpg')
+  background-size: 256px
+  overflow: auto
+
+  body.supports-webp &
+    background-image: url('./files/forest_soil.webp')
+
+  &::before
+    content: ''
+    position: fixed
+    left: 2vw
+    bottom: 0
+    width: 40vw
+    height: calc(40vw * 363 / 228)
+    background: url('./files/ant.svg')
+    background-size: contain
+    filter: drop-shadow(2px 2px 10px #44444477)
+
+  .intro-widget-inner
+    box-sizing: border-box
+    background: #ffffffdd
+    border: 2px solid #2e1509
+    border-radius: 3vw
+    padding: $intro_padding
+    margin-bottom: calc(40vw * 363 / 228 - 3.6em)
+
+  h1
+    font-family: $cursive
+    font-weight: 400
+    margin-top: 0
+
+  ul.highlight
+    padding: 3vw $intro_padding 3vw ($intro_padding + 4vw)
+    margin: 1em (-$intro_padding)
+    border: 1px solid #d1d115
+    border-width: 1px 0
+    background: #ffff8f
+
+    @supports (background-blend-mode: lighten)
+      background: url('./files/forest_soil.jpg'), #ffffa5e7
+      background-size: 256px
+      background-attachment: fixed
+      background-blend-mode: lighten
+
+      body.supports-webp &
+        background-image: url('./files/forest_soil.webp')

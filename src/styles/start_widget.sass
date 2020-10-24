@@ -1,0 +1,53 @@
+@import ./util
+
+.start-widget
+  width: 100%
+  height: 100%
+  font-family: $cursive
+  color: white
+  font-size: calc(3.6vw + 12px)
+  background: url('./files/texture.png'), linear-gradient(green, green 0.2vh, #ca7a17 2vh, #281500)
+  @include text-outline($width: 0.02em, $col: #281500)
+
+  body.supports-webp &
+    background: url('./files/texture.webp'), linear-gradient(green, green 0.2vh, #ca7a17 2vh, #281500)
+
+  h1
+    margin: 0
+    padding-top: calc(50vh - 1.7em)
+    font-size: calc(10vw + 30px)
+    font-weight: 400
+    @include text-outline($width: 0.015em, $col: #281500)
+
+  .start-canvas
+    position: fixed
+    width: 100%
+    height: 100%
+    opacity: 0.4
+
+  .centered
+    position: relative
+    user-select: none
+
+  button.start-btn
+    opacity: 0
+    background-color: #ffffffcc
+    color: black
+    border: 0.04em solid #281500
+    font-family: inherit
+    letter-spacing: 0.03em
+    border-radius: 0.2em
+    font-size: 1.5em
+    padding: 0.3em 0.6em
+    margin: 1em 0 0 0
+    transition: opacity 0.4s
+
+  button.reset-btn
+    font-size: 1em
+    padding: 0.3em 0.6em
+    background: transparent
+    color: #95ddff
+    font-weight: normal
+    border: none
+    transition: opacity 0.4s
+    @include text-outline($width: 0.02em, $col: #281500)
