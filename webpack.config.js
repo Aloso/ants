@@ -49,6 +49,7 @@ module.exports = (env, argv) => {
       new CopyPlugin({
         patterns: [
           { from: './src/manifest.json', to: './manifest.json' },
+          { from: './src/assets', to: './assets' },
         ]
       }),
       new MiniCssExtractPlugin({
@@ -84,7 +85,7 @@ module.exports = (env, argv) => {
             : ['style-loader', cssLoader],
         },
         {
-          test: /\.(png|svg|jpg|gif)$/,
+          test: /\.(png|svg|jpg|gif|ttf|otf|woff)$/,
           use: 'file-loader',
         },
       ],

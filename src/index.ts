@@ -8,12 +8,24 @@ import './index.sass'
 // Import modules dynamically:
 // import(/* webpackChunkName: "foo" */ './foo').then((foo) => ...)
 
-import { start_screen } from './start_screen'
+import { StartWidget } from './interface/start_widget'
+import { show_intro_widgets } from './interface/intros'
+import { setup_global_state } from './logic/app_state'
 
 // enable hot reloading for this module:
-if (module.hot) module.hot.accept()
+// if (module.hot) {
+//     module.hot.accept()
+//     module.hot.addDisposeHandler(() => remove_all_widgets())
+// }
 
-function start() {
-    start_screen().then(start)
+if (window.innerHeight < window.innerWidth) {
+    alert('Dieses Spiel sollte auf einem Handy im Hochformat geöffnet werden.')
 }
-start()
+
+async function main() {
+    const app_state = await setup_global_state()
+    await new StartWidget(app_state).show()
+    await show_intro_widgets(app_state)
+}
+
+main().catch(console.error)
