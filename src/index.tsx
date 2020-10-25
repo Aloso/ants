@@ -3,7 +3,7 @@ import 'core-js/features/promise'
 import 'regenerator-runtime/runtime'
 
 // Stylesheets
-import './index.sass'
+import './styles/index.sass'
 
 // Import modules dynamically:
 // import(/* webpackChunkName: "foo" */ './foo').then((foo) => ...)
@@ -15,8 +15,8 @@ import { h, render } from 'preact'
 
 async function main() {
   await setup_interface()
-  const app_state = await setup_global_state()
-  render(<MainScreen app_state={app_state} />, document.body)
+  const appState = await setup_global_state()
+  render(<MainScreen app_state={appState} />, document.body)
 }
 
 main().catch(console.error)

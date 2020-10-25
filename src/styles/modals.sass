@@ -1,17 +1,19 @@
 @import "./util"
 
-.confirm-widget
+.modal
   position: fixed
   box-sizing: border-box
-  background-color: #00000033
+  background-color: #00000055
   left: 0
   top: 0
   width: 100%
   height: 100%
   padding: 8vw
   font-size: 20px
+  transition: background-color .3s
+  animation: fade-in-dark-bg .3s
 
-  .confirm-widget-inner
+  .modal-inner
     box-sizing: border-box
     background: white
     border: 2px solid #2e1509
@@ -30,3 +32,15 @@
       font-size: 1.1em
       padding-left: 0.7em
       padding-right: 0.7em
+
+  &.fading-out
+    background-color: transparent
+
+  &.fading-in .modal-inner
+    animation: 0.3s scale-in
+
+  &.paused .modal-inner
+    animation-play-state: paused
+
+  &.fading-out .modal-inner
+    animation: 0.3s infinite alternate-reverse scale-in

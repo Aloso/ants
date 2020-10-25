@@ -14,5 +14,7 @@ export async function setup_interface() {
   try {
     await createWebpImage()
     document.body.classList.add('supports-webp')
-  } catch { }
+  } catch {
+    // do nothing
+  }
 }
