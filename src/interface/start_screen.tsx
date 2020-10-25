@@ -47,7 +47,7 @@ export class StartScreen extends Component<StartScreenProps> {
     }, [])
 
     return (
-      <div class="widget start-widget">
+      <div class="start-screen">
         <StartAnimationCanvas />
         <div class="centered">
           <h1>Ameisen</h1>

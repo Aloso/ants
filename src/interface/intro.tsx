@@ -7,8 +7,8 @@ type WidgetProps = RenderableProps<{ app_state: AppState, onProceed: () => void 
 type ScreenFunction = (props: WidgetProps) => JSX.Element
 
 export const IntroScreen = (props: IntroProps): JSX.Element =>
-  <div class="widget intro-widget">
-    <div class="intro-widget-inner">
+  <div class="intro-screen">
+    <div class="intro-screen-inner">
       {props.title == null ? null : <h1>{props.title}</h1>}
       {props.children}
       <div class="align-right margin-top">
