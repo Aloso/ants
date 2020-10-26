@@ -6,7 +6,7 @@ async function createWebpImage(): Promise<ImageBitmap> {
   return await createImageBitmap(blob)
 }
 
-export async function setup_interface() {
+export async function setupInterface() {
   if (window.innerHeight < window.innerWidth) {
     alert('Dieses Spiel sollte auf einem Handy im Hochformat geöffnet werden.')
   }

@@ -8,15 +8,17 @@ import './styles/index.sass'
 // Import modules dynamically:
 // import(/* webpackChunkName: "foo" */ './foo').then((foo) => ...)
 
-import { setup_global_state } from './logic/app_state'
-import { setup_interface } from './interface/setup'
+import { setupGlobalState } from './logic/app_state'
+import { setupInterface } from './interface/setup'
+import { History } from './util/history'
 import { MainScreen } from './interface/main'
 import { h, render } from 'preact'
 
 async function main() {
-  await setup_interface()
-  const appState = await setup_global_state()
-  render(<MainScreen app_state={appState} />, document.body)
+  await History.setup()
+  await setupInterface()
+  const appState = await setupGlobalState()
+  render(<MainScreen appState={appState} />, document.body)
 }
 
 main().catch(console.error)

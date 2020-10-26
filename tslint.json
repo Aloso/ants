@@ -62,6 +62,7 @@
       true,
       "ignore-params"
     ],
+    "no-namespace": false,
     "no-non-null-assertion": true,
     "no-redundant-jsdoc": true,
     "no-shadowed-variable": false,

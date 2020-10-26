@@ -48,6 +48,11 @@ input
   border: 1px solid #2e1509
   border-radius: 0.25em
 
+  &:focus
+    outline: none
+    border-color: #883e1c
+    box-shadow: inset 0 0 0 1px #883e1c
+
 button.big
   font-family: $cursive
   font-size: 1.3em
@@ -60,11 +65,17 @@ button.big
   &:first-child
     margin-left: 0
 
+  &:focus
+    background-color: #e7e7e7
+
   &.cancel
     border-color: #a8a8a8
+
   &.confirm
     border-color: #02aa02
     background-color: #c7ffc7
+    &:focus
+      background-color: #99f899
 
 @import "./modals"
 @import "./start_screen"

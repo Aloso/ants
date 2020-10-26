@@ -5,45 +5,50 @@ import { AppState } from 'logic/app_state'
 import { useCallback } from 'preact/hooks'
 
 export interface StartScreenProps {
-  app_state: AppState
+  appState: AppState
   onProceed(): void
   onReset(): void
 }
 
-export class StartScreen extends Component<StartScreenProps> {
+interface StartScreenState {
+  buttonsVisible: boolean
+  introShown: boolean
+}
+
+export class StartScreen extends Component<StartScreenProps, StartScreenState> {
   private readonly btn = createRef<HTMLButtonElement>()
   private readonly resetBtn = createRef<HTMLButtonElement>()
 
   state = {
-    buttons_visible: false,
-    has_started: false,
+    buttonsVisible: false,
+    introShown: false,
   }
 
   componentDidMount() {
-    this.state.has_started = this.props.app_state.name != null
+    this.state.introShown = this.props.appState.introShown
 
     setTimeout(() => {
       if (this.btn.current == null || this.resetBtn.current == null) err('Button is null')
       this.btn.current.style.opacity = '1'
-      if (this.state.has_started) {
+      if (this.state.introShown) {
         this.resetBtn.current.style.opacity = '1'
       }
-      setTimeout(() => this.state.buttons_visible = true, 300)
+      setTimeout(() => this.state.buttonsVisible = true, 300)
     }, 300)
   }
 
   componentWillUnmount() {
-    this.state.buttons_visible = false
-    this.state.has_started = false
+    this.state.buttonsVisible = false
+    this.state.introShown = false
   }
 
   render(props: RenderableProps<StartScreenProps>) {
     const start = useCallback(() => {
-      if (this.state.buttons_visible) props.onProceed()
+      if (this.state.buttonsVisible) props.onProceed()
     }, [])
 
     const reset = useCallback(async () => {
-      if (this.state.has_started && this.state.buttons_visible) props.onReset()
+      if (this.state.introShown && this.state.buttonsVisible) props.onReset()
     }, [])
 
     return (
@@ -54,7 +59,7 @@ export class StartScreen extends Component<StartScreenProps> {
           <div>Ein Weihnachtsspiel</div>
           <button class="start-btn" style="opacity: 0" ref={this.btn} onClick={start}>Start</button>
           <br /><br />
-          <button class="reset-btn" style="opacity: 0" ref={this.resetBtn} onClick={reset}>Spielstand zurücksetzen</button>
+          <button class="reset-btn" style="opacity: 0" ref={this.resetBtn} onClick={reset}>Zurücksetzen</button>
         </div>
       </div>
     )
