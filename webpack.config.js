@@ -51,6 +51,8 @@ module.exports = (env, argv) => {
       new CopyPlugin({
         patterns: [
           { from: './src/assets', to: './assets' },
+          { from: './src/manifest.json', to: './manifest.json' },
+          { from: './src/browserconfig.xml', to: './browserconfig.xml' },
         ]
       }),
       new MiniCssExtractPlugin({
