@@ -9,6 +9,7 @@ tmp/
 
 node_modules/
 dist/
+logo/
 .sass-cache/
 *.css.map
 *.sass.map
