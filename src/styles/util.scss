@@ -1,6 +1,11 @@
 $sans-serif: 'Work Sans', 'Segoe UI', 'Noto Sans', -apple-system, sans-serif;
 $cursive: 'Patrick Hand', sans-serif;
 
+$queen-gold: #ffe44b;
+$drone-blue: #85d8ff;
+$soldier-red: #ffb9b9;
+$worker-green: #bdffc0;
+
 @mixin text-outline($width: 0, $col: black) {
   $wd: 0.84 * $width;
   text-shadow: $width 0 0 $col, -$width 0 0 $col, 0 $width 0 $col, 0 (-$width) 0 $col,

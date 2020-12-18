@@ -1,12 +1,32 @@
+import { AppState } from '../logic/app_state'
 import { h, Fragment, RenderableProps } from 'preact'
 import { useEffect } from 'preact/hooks'
 
-export function Tip(props: RenderableProps<{ onProceed(): void }>) {
+type TipProps = RenderableProps<{ appState: AppState, onProceed(): void }>
+
+const tipsAvailable = false
+
+export function Tip(props: TipProps) {
+  if (!tipsAvailable) {
+    props.onProceed()
+    return <></>
+  }
   useEffect(() => {
     document.title = 'Tip'
   })
-  return <>
-    <p>Tip</p>
-    <button onClick={props.onProceed}>Super!</button>
-  </>
+
+  const tips = [
+    <><b>This</b> is nice tip!</>,
+    <>Another tip!</>,
+  ]
+
+  return <div class="tip-screen">
+    <div class="tip-screen-inner">
+      <h1>Tip</h1>
+      {tips[0]}
+      <div class="align-right margin-top">
+        <button class="big" onClick={props.onProceed}>Super!</button>
+      </div>
+    </div>
+  </div>
 }

@@ -4,9 +4,9 @@ import 'regenerator-runtime/runtime'
 
 // Stylesheets
 import './styles/index.sass'
-
-// Import modules dynamically:
-// import(/* webpackChunkName: "foo" */ './foo').then((foo) => ...)
+if (module.hot) {
+  module.hot.accept('./styles/')
+}
 
 import { setupGlobalState } from './logic/app_state'
 import { setupInterface } from './interface/setup'

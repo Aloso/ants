@@ -1,0 +1,115 @@
+@import "./util"
+
+#game
+  background-color: #f1e0bc
+  height: 100%
+
+  #top-bar
+    padding: 4px 10px
+    background-color: #ecb74d
+    border-bottom: 1px solid #d4ac5a
+    box-shadow: 0 0 0 1px #ffffffaf
+    font-family: $cursive
+    font-size: 120%
+    letter-spacing: 0.03em
+    height: 28px
+    line-height: 28px
+
+  #anthill
+    width: 100%
+    height: calc(100% - 36px)
+    position: fixed
+    overflow: auto
+    // background: linear-gradient(#40bbb5, #308557, #2d5e2d)
+    background-image: linear-gradient(60deg, #1855187F 0%, #1855187F 9%, #1f5f287F 9%, #1f5f287F 18%, #2568377F 18%, #2568377F 27%, #2a72457F 27%, #2a72457F 36%, #2f7c557F 36%, #2f7c557F 45%, #3386647F 45%, #3386647F 54%, #3690747F 54%, #3690747F 63%, #399b847F 63%, #399b847F 72%, #3ca5947F 72%, #3ca5947F 81%, #3eb0a47F 81%, #3eb0a47F 90%, #40bbb57F 90%, #40bbb57F 100%), linear-gradient(-60deg, #185518 0%, #185518 9%, #1f5f28 9%, #1f5f28 18%, #256837 18%, #256837 27%, #2a7245 27%, #2a7245 36%, #2f7c55 36%, #2f7c55 45%, #338664 45%, #338664 54%, #369074 54%, #369074 63%, #399b84 63%, #399b84 72%, #3ca594 72%, #3ca594 81%, #3eb0a4 81%, #3eb0a4 90%, #40bbb5 90%, #40bbb5 100%)
+    color: white
+    @include text-outline($width: 0.03em, $col: rgba(0, 0, 0, 0.2))
+
+    .anthill-inner
+      position: absolute
+      width: 100%
+      box-sizing: border-box
+      z-index: 1
+      padding: 1rem
+      font-size: 1.2rem
+      font-weight: 470
+
+      h1
+        font-family: $cursive
+        font-size: 2.2em
+        margin-top: 0
+        @include text-outline($width: 0.02em, $col: rgba(0, 0, 0, 0.15))
+
+      h2
+        margin-bottom: 0.5em
+
+      .small
+        font-size: 90%
+
+      .dec-top
+        margin-top: -1em
+
+  .bg-canvas
+    position: absolute
+    left: 0
+    top: 0
+    width: 100%
+    height: 100%
+
+.ant
+  display: flex
+  background: rgba(0, 0, 0, 0.2)
+  padding: 0.5em 0.5em 0.5em 0.8em
+  margin: 0.5em 0
+  border-radius: 10px
+
+  h3
+    font-size: 115%
+    font-weight: 550
+    margin: 0
+
+  &.queen h3
+    color: $queen-gold
+  &.drone h3
+    color: $drone-blue
+  &.soldier h3
+    color: $soldier-red
+  &.worker h3
+    color: $worker-green
+
+  .flex-fill
+    flex-grow: 1
+    flex-shrink: 1
+    padding-right: 0.5em
+
+  button.select-occupation
+    font-size: 90%
+    border: none
+    padding: 0.2em 0.6em
+    flex-shrink: 0
+    border-radius: 6px
+    color: black
+    background-color: #ffffffbf
+    text-shadow: none
+    font-weight: normal
+
+.ants
+  display: block
+  background: rgba(0, 0, 0, 0.2)
+  padding: 0.7em 0.9em
+  margin: 0.5em 0
+  border-radius: 10px
+
+  h2
+    font-size: 125%
+    font-weight: 600
+    margin: 0
+
+  &.queen h2
+    color: $queen-gold
+  &.drone h2
+    color: $drone-blue
+  &.soldier h2
+    color: $soldier-red
+  &.worker h2
+    color: $worker-green

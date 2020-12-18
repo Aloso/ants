@@ -95,10 +95,10 @@ export class MainScreen extends Component<MainScreenProps, MainScreenState> {
         screen = <Intro appState={appState} onProceed={proceed} />
         break
       case 'tip':
-        screen = <Tip onProceed={proceed} />
+        screen = <Tip appState={appState} onProceed={proceed} />
         break
       case 'game':
-        screen = <Game />
+        screen = <Game appState={appState} />
         break
     }
 

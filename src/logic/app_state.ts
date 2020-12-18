@@ -1,7 +1,7 @@
 import { connectDb, IDBSuccessEvent, request } from './database'
 
 export async function setupGlobalState(): Promise<AppState> {
-  const db = await connectDb('AntData', { version: 2 })
+  const db = await connectDb('AntData', { version: 4 })
 
   const req = db.transaction('globalData', 'readwrite').objectStore('globalData').get(0)
   const obj: AppStateObject | null = (await request(req)).target.result
